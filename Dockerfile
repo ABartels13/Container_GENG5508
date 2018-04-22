@@ -7,8 +7,6 @@ WORKDIR /files
 #Add files
 ADD . /files
 
-ENV DISPLAY :0
-
 RUN apt-get update && apt-get install -y \ 
 	git-core \
 	nano \
@@ -29,7 +27,7 @@ RUN apt-get install -y python3-pip python-pip && \
 	pip3 install --trusted-host pypi.python.org -r requirements.txt && \
 	pip install --trusted-host pypi.python.org -r requirements_2.txt
 
-RUN . /opt/ros/lunar/setup.sh && \
+RUN . /opt/ros/kinetic/setup.sh && \
 	mkdir -p ros_ws/src && \
 	cd ros_ws && \
 	catkin_make && \
