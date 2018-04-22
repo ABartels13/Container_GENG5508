@@ -67,7 +67,7 @@ RUN git clone https://github.com/KenYF/Files_GENG5508.git  && \
 	cloudbuild.yaml \
 	README.md
 	
-RUN xvfb && x11vnc -storepassword 1234 ~/.vnc/passwd
+RUN startx && x11vnc -storepassword 1234 ~/.vnc/passwd
 
 	
 CMD ["jupyter","lab","--allow-root","--ip=0.0.0.0"]
