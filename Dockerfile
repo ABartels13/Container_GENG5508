@@ -18,7 +18,11 @@ RUN apt-get update && apt-get install -y \
 	ros-kinetic-joystick-drivers \
 	python3 \
 	python \
-	wget 
+	wget \
+	x11vnc \
+	xvfb 
+
+RUN  mkdir ~/.vnc
 
 #RUN rosdep init && rosdep update
 
@@ -59,6 +63,8 @@ RUN git clone https://github.com/KenYF/Files_GENG5508.git  && \
 	cloudbuild.yaml \
 	README.md
 	
+RUN x11vnc -storepassword 1234 ~/.vnc/passwd
+
 	
 CMD ["jupyter","lab","--allow-root","--ip=0.0.0.0"]
 #CMD ["bash"]
