@@ -50,7 +50,9 @@ RUN apt install -y libsm6 \
 
 RUN cd ros_ws && \
 	wget https://github.com/RethinkRobotics/baxter/raw/master/baxter.sh && \
-	chmod u+x baxter.sh 
+	chmod u+x baxter.sh
+
+RUN git clone https://github.com/KenYF/Files_GENG5508.git  
 	
 CMD ["jupyter","lab","--allow-root","--ip=0.0.0.0"]
 #CMD ["bash"]
