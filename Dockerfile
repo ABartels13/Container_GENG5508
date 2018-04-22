@@ -6,6 +6,8 @@ WORKDIR /files
 #Add files
 ADD . /files
 
+ENV DISPLAY :0
+
 RUN apt-get update && apt-get install -y \ 
 	git-core \
 	nano \
@@ -20,7 +22,9 @@ RUN apt-get update && apt-get install -y \
 	python \
 	wget \
 	x11vnc \
-	xvfb 
+	xvfe \
+	xinit \
+	xterm 
 
 RUN  mkdir ~/.vnc
 
