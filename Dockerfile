@@ -52,7 +52,13 @@ RUN cd ros_ws && \
 	wget https://github.com/RethinkRobotics/baxter/raw/master/baxter.sh && \
 	chmod u+x baxter.sh
 
-RUN git clone https://github.com/KenYF/Files_GENG5508.git  
+RUN git clone https://github.com/KenYF/Files_GENG5508.git  && \
+	rm Dockerfile \
+	requirements.txt \
+	requirements_2.txt \
+	cloudbuild.yaml \
+	README.md
+	
 	
 CMD ["jupyter","lab","--allow-root","--ip=0.0.0.0"]
 #CMD ["bash"]
