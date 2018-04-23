@@ -59,6 +59,8 @@ RUN git clone https://github.com/KenYF/Files_GENG5508.git  && \
 	requirements_2.txt \
 	cloudbuild.yaml \
 	README.md
+
+EXPOSE 80 11311
 	
 #CMD ["jupyter","lab","--allow-root","--ip=0.0.0.0"]
 #CMD ["bash"]
