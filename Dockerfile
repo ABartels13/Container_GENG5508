@@ -38,10 +38,10 @@ RUN cd ros_ws/src && \
 	wstool merge https://raw.githubusercontent.com/RethinkRobotics/baxter/master/baxter_sdk.rosinstall && \
 	wstool update
 
-#RUN . /opt/ros/lunar/setup.sh && \
-#	cd ros_ws && \
-#	catkin_make && \
-#	catkin_make install
+RUN . /opt/ros/kinetic/setup.sh && \
+	cd ros_ws && \
+	catkin_make && \
+	catkin_make install
 
 RUN apt install -y libsm6 \
 	libxext6 \
