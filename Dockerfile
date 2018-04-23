@@ -2,10 +2,10 @@
 FROM ct2034/vnc-ros-kinetic-full
 
 #Set the working directory to /files
-WORKDIR /files
+WORKDIR /root/files
 
 #Add files
-ADD . /files
+ADD . /root/files
 
 RUN apt-get update && apt-get install -y \ 
 	git-core \
