@@ -31,7 +31,6 @@ RUN apt-get install -y python3-pip python-pip && \
 RUN . /opt/ros/lunar/setup.sh && \
 	mkdir -p ros_ws/src && \
 	cd ros_ws && \
-	. install/setup.bash && \
 	catkin_make && \
 	catkin_make install
 
@@ -40,10 +39,10 @@ RUN cd ros_ws/src && \
 	wstool merge https://raw.githubusercontent.com/RethinkRobotics/baxter/master/baxter_sdk.rosinstall && \
 	wstool update
 
-RUN . /opt/ros/lunar/setup.sh && \
-	cd ros_ws && \
-	catkin_make && \
-	catkin_make install
+#RUN . /opt/ros/lunar/setup.sh && \
+#	cd ros_ws && \
+#	catkin_make && \
+#	catkin_make install
 
 RUN apt install -y libsm6 \
 	libxext6 \
