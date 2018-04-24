@@ -15,9 +15,9 @@ RUN apt-get update && apt-get install -y \
 	python-vcstools \ 
 	python-rosdep \
 	python-rosinstall \
-	ros-kinetic-geographic-msgs \ 
-	ros-kinetic-control-msgs \
-	ros-kinetic-joystick-drivers \
+	ros-lunar-geographic-msgs \ 
+	ros-lunar-control-msgs \
+	ros-lunar-joystick-drivers \
 	python3 \
 	python \
 	wget
@@ -39,10 +39,10 @@ RUN cd ros_ws/src && \
 	wstool merge https://raw.githubusercontent.com/RethinkRobotics/baxter/master/baxter_sdk.rosinstall && \
 	wstool update
 
-#RUN . /opt/ros/lunar/setup.sh && \
-#	cd ros_ws && \
-#	catkin_make && \
-#	catkin_make install
+RUN . /opt/ros/lunar/setup.sh && \
+	cd ros_ws && \
+	catkin_make && \
+	catkin_make install
 
 RUN apt install -y libsm6 \
 	libxext6 \
