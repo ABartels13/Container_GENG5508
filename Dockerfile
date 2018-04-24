@@ -1,5 +1,5 @@
-#FROM ros:lunar-ros-core-xenial
-FROM ct2034/vnc-ros-kinetic-full
+FROM ros:lunar-ros-core-xenial
+#FROM ct2034/vnc-ros-kinetic-full
 
 #Set the working directory to /files
 WORKDIR /root/files
@@ -27,7 +27,7 @@ RUN apt-get install -y python3-pip python-pip && \
 	pip3 install --trusted-host pypi.python.org -r requirements.txt && \
 	pip install --trusted-host pypi.python.org -r requirements_2.txt
 
-RUN . /opt/ros/kinetic/setup.sh && \
+RUN . /opt/ros/lunar/setup.sh && \
 	mkdir -p ros_ws/src && \
 	cd ros_ws && \
 	catkin_make && \
@@ -38,7 +38,7 @@ RUN cd ros_ws/src && \
 	wstool merge https://raw.githubusercontent.com/RethinkRobotics/baxter/master/baxter_sdk.rosinstall && \
 	wstool update
 
-RUN . /opt/ros/kinetic/setup.sh && \
+RUN . /opt/ros/lunar/setup.sh && \
 	cd ros_ws && \
 	catkin_make && \
 	catkin_make install
