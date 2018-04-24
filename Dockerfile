@@ -14,7 +14,8 @@ RUN apt-get update && apt-get install -y \
 	python-wstool \ 
 	python-vcstools \ 
 	python-rosdep \
-	python-rosinstall \ 
+	python-rosinstall \
+	ros-kinetic-geographic-msgs \ 
 	ros-kinetic-control-msgs \
 	ros-kinetic-joystick-drivers \
 	python3 \
