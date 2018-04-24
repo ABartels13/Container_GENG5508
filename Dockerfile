@@ -31,6 +31,7 @@ RUN apt-get install -y python3-pip python-pip && \
 RUN . /opt/ros/lunar/setup.sh && \
 	mkdir -p ros_ws/src && \
 	cd ros_ws && \
+	source install/setup.bash && \
 	catkin_make && \
 	catkin_make install
 
