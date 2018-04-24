@@ -1,4 +1,4 @@
-FROM ros:lunar-ros-core-xenial
+FROM osrf/ros:lunar-desktop-full-xenial
 #FROM ct2034/vnc-ros-kinetic-full
 
 #Set the working directory to /files
